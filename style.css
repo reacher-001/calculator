@@ -19,13 +19,21 @@ body{
     gap: 32px;
 }
 #display{
+    display: flex;
     height: 48px;
     width: 100%;
     align-self: center;
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-top: 16px;
     overflow: hidden;
+    justify-content: flex-end;
+    align-items: center;
+}
+#display-text {
+    font-size: 32px;
+    font-weight: 500;
+    padding-right: 16px;
 }
 #keypad{
     display: flex;
@@ -42,6 +50,11 @@ body{
 .digit{
     width:25%;
     height: 48px;
+    border-radius: 10px;
+}
+.digit:hover {
+    box-shadow: 0 0 15px 5px rgba(15, 46, 50, 0.625);
+    transform: translateY(-2px);
 }
 .operator-buttons{
     display: flex;
@@ -54,4 +67,10 @@ body{
 .operator{
     width:100%;
     flex-basis: 100%;
+    border-radius: 10px;
+    background-color: orange;
+}
+.operator:hover {
+    box-shadow: 0 0 15px 5px rgba(229, 136, 44, 0.625);
+    transform: translateY(-2px);
 }
