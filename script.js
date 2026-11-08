@@ -76,6 +76,25 @@ function clickOperator(target) {
         //reset display for next operand input
         resetDisplay = true;
     }
+    //handling =(equalto)
+    else if(target.id === "equalto") {
+        //check if operator present and second operand has been provided
+        if(operator == null || resetDisplay == true) return;
+        //else 
+        const display = document.querySelector("#display-text");
+        //set second operand
+        secondOp = Number(display.textContent);
+        //caluclate result
+        let result = operate(operator, firstOp, secondOp);
+        //display result on screen
+        display.textContent = result.toString();
+        //set clearDisplay to true for enterning the next operand
+        resetDisplay = true;
+        //clear the previous operator
+        operator = null;
+        //set firstOp to result for next calculation
+        firstOp = result;
+    }
 }
 
 //function to select operator based on ID
