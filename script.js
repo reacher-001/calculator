@@ -17,7 +17,13 @@ function operate(operator, num1, num2) {
         case '+': return add(num1, num2);
         case '-': return subtract(num1, num2);
         case '*': return multiply(num1, num2);
-        case '/': return divide(num1, num2);
+        case '/': if(num2 == 0){
+            alert("Cannot divide by 0");
+            return 0;
+        } 
+        else {
+            return divide(num1, num2);
+        }
         default:  return "some error occured";
     }
 }
@@ -94,6 +100,17 @@ function clickOperator(target) {
         operator = null;
         //set firstOp to result for next calculation
         firstOp = result;
+    }
+    //handling AC button
+    else {
+        //reset all core variables
+        firstOp = null;
+        secondOp = null;
+        operator = null;
+        resetDisplay = false;
+        //display 0 on the screen
+        const display = document.querySelector("#display-text");
+        display.textContent = "0";
     }
 }
 
